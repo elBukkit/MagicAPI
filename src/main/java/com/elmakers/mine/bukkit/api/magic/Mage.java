@@ -5,10 +5,12 @@ import java.util.List;
 import java.util.Set;
 
 import com.elmakers.mine.bukkit.api.action.GUIAction;
+import com.elmakers.mine.bukkit.api.effect.SoundEffect;
 import com.elmakers.mine.bukkit.api.spell.MageSpell;
 import org.bukkit.Color;
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.Sound;
 import org.bukkit.block.Block;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.ConfigurationSection;
@@ -97,6 +99,7 @@ public interface Mage extends CostReducer {
      * @return Location the location of the Mage's eyes, used for targeting.
      */
     public Location getEyeLocation();
+    public Location getWandLocation();
 
     /**
      * Get the direction this Mage is facing.
@@ -345,8 +348,8 @@ public interface Mage extends CostReducer {
     public int getExperience();
     public void giveExperience(int xp);
 
-    public void removeMana(int mana);
-    public int getMana();
+    public void removeMana(float mana);
+    public float getMana();
 
     public int getLevel();
     public void setLevel(int level);
@@ -369,6 +372,7 @@ public interface Mage extends CostReducer {
     public void enableFallProtection(int ms, int count, Spell protector);
 
     public boolean save(ConfigurationSection configuration);
+    public void activateWand();
     public void deactivate();
     public boolean isValid();
     public boolean restoreWand();
@@ -376,8 +380,9 @@ public interface Mage extends CostReducer {
     public boolean isStealth();
     public boolean isSneaking();
 
-    public void activateGUI(GUIAction action);
+    public void activateGUI(GUIAction action, Inventory inventory);
     public void deactivateGUI();
+    public void playSoundEffect(SoundEffect sound);
 
     public void showHoloText(Location location, String text, int duration);
     public int getDebugLevel();

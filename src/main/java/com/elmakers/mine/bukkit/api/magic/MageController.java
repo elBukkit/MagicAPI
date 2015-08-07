@@ -26,6 +26,7 @@ import com.elmakers.mine.bukkit.api.spell.SpellCategory;
 import com.elmakers.mine.bukkit.api.spell.SpellTemplate;
 import com.elmakers.mine.bukkit.api.wand.LostWand;
 import com.elmakers.mine.bukkit.api.wand.Wand;
+import org.bukkit.util.Vector;
 
 public interface MageController {
 
@@ -81,6 +82,9 @@ public interface MageController {
     public ItemStack createBrushItem(String brushKey);
 
     public String describeItem(ItemStack item);
+    public String getItemKey(ItemStack item);
+    public boolean takeItem(Player player, ItemStack item);
+    public boolean hasItem(Player player, ItemStack item);
 
     public SpellCategory getCategory(String key);
     public Collection<SpellCategory> getCategories();
@@ -148,6 +152,7 @@ public interface MageController {
     public UndoList undoRecent(Block target, int timeout);
     public void forgetMage(Mage mage);
     public void scheduleUndo(UndoList undoList);
+    public void cancelScheduledUndo(UndoList undoList);
 
     public String getEntityName(Entity entity);
     public String getEntityDisplayName(Entity entity);
@@ -159,6 +164,8 @@ public interface MageController {
     public double getWorthItemAmount();
     public CurrencyItem getCurrency();
     public boolean itemsAreEqual(ItemStack first, ItemStack second);
+
+    public void addFlightExemption(Player player, int duration);
 
     /**
      * Check to see if the Elementals plugin is present an enabled.
@@ -264,4 +271,10 @@ public interface MageController {
      * @param item
      */
     public void serialize(ConfigurationSection root, String key, ItemStack item);
+
+    public boolean isLocked(Block block);
+    public void sendPlayerToServer(Player player, String server);
+    public void warpPlayerToServer(Player player, String server, String warp);
+    public boolean spawnPhysicsBlock(Location location, Material material, short data, Vector velocity);
+    public boolean isDisguised(Entity entity);
 }

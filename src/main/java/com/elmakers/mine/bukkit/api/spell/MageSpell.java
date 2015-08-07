@@ -32,8 +32,7 @@ public interface MageSpell extends Spell, CostReducer {
     public void activate();
     public boolean deactivate();
     public boolean deactivate(boolean force, boolean quiet);
-    public void reactivate();
-    public boolean cancel();
+    public void setActive(boolean active);
 
     public void setMage(Mage mage);
     public Mage getMage();

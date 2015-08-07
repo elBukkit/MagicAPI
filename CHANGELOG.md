@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## CB-1.1
+
+ - Fixes to GUI items being glitched out of inventories
+ - Cure cures wither
+
 ## 2.7
 
  - Extend/change effect API to allow for overlapping effects

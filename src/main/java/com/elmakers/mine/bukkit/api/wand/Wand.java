@@ -8,6 +8,7 @@ import com.elmakers.mine.bukkit.api.spell.Spell;
 import com.elmakers.mine.bukkit.api.spell.SpellTemplate;
 import org.bukkit.Location;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
@@ -92,6 +93,10 @@ public interface Wand extends CostReducer {
     public MageController getController();
     public boolean showCastMessages();
     public boolean showMessages();
-    public String getTemplate();
+    public String getTemplateKey();
     public boolean isIndestructible();
+    public void playEffects(String key);
+    public boolean cast();
+    public boolean isBound();
+    public void damageDealt(double damage, Entity target);
 }
