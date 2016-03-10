@@ -11,6 +11,7 @@ import com.elmakers.mine.bukkit.api.block.MaterialAndData;
 import com.elmakers.mine.bukkit.api.entity.EntityData;
 import com.elmakers.mine.bukkit.api.item.ItemData;
 import com.elmakers.mine.bukkit.api.maps.MapController;
+import com.elmakers.mine.bukkit.api.wand.WandTemplate;
 import com.elmakers.mine.bukkit.api.wand.WandUpgradePath;
 import org.bukkit.Location;
 import org.bukkit.Material;
