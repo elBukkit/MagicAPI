@@ -90,6 +90,10 @@ public interface MageController {
     public ItemStack createBrushItem(String brushKey);
     public Wand getWand(ItemStack item);
     public Wand getWand(ConfigurationSection config);
+    public WandTemplate getWandTemplate(String key);
+    public Collection<WandTemplate> getWandTemplates();
+    public void loadWandTemplate(String key, ConfigurationSection wandNode);
+    public void unloadWandTemplate(String key);
 
     public String describeItem(ItemStack item);
     public String getItemKey(ItemStack item);
@@ -322,4 +326,5 @@ public interface MageController {
     public Set<String> getItemKeys();
     public ItemData getItem(String key);
     public ItemData getItem(ItemStack match);
+    public void unloadItemTemplate(String key);
 }
