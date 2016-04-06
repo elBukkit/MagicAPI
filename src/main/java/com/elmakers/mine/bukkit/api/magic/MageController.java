@@ -301,6 +301,7 @@ public interface MageController {
     public boolean isDisguised(Entity entity);
     public boolean isSpellUpgradingEnabled();
     public boolean isSPEnabled();
+    public boolean isSPEarnEnabled();
     public int getSPMaximum();
     public void deleteMage(final String id);
     public void disableItemSpawn();
