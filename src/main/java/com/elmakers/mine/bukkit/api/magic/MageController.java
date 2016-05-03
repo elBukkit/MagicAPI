@@ -332,4 +332,5 @@ public interface MageController {
     public void unloadItemTemplate(String key);
     public void loadItemTemplate(String key, ConfigurationSection itemNode);
     public Double getWorth(ItemStack item);
+    public void managePlayerData(boolean external, boolean backupInventories);
 }
