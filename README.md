@@ -1,6 +1,13 @@
 MagicAPI
 ========
 
+ATTENTION!
+
+This repo has been merged with the magic plugin repo. Please find it here now:
+
+https://github.com/elBukkit/MagicPlugin/tree/master/MagicAPI
+
+
 The public API for the Magic plugin.
 
 This can be used in one of two ways:
